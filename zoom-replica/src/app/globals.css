@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --zoom-blue: #0b5cff;
+  --zoom-navy: #00053d;
+  --zoom-dark: #00031f;
+  --zoom-gray: #53565a;
+  --zoom-light-gray: #f7f7f8;
+  --zoom-footer-bg: #00053d;
+  --background: #ffffff;
+  --foreground: #00031f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-zoom-blue: var(--zoom-blue);
+  --color-zoom-navy: var(--zoom-navy);
+  --color-zoom-dark: var(--zoom-dark);
+  --color-zoom-gray: var(--zoom-gray);
+  --color-zoom-light: var(--zoom-light-gray);
+  --font-sans: var(--font-almaden);
+  --font-display: var(--font-happy-face);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-almaden), Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-happy-face), Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background: #d1d5db !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--zoom-navy) !important;
+}
+
+/* Logo marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
